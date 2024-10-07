@@ -1,27 +1,52 @@
-# FitPerformSyncAngular
+# FitPerformSync Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+## Descrição
+O **FitPerformSync** é uma plataforma de treino e nutrição integrada que ajusta os planos de exercícios e alimentação em tempo real com base no desempenho do usuário, monitorado por dispositivos vestíveis. Esta aplicação frontend foi desenvolvida com **Angular 18** e **Angular Material** para fornecer uma interface moderna, responsiva e intuitiva.
 
-## Development server
+## Tecnologias Utilizadas
+- **Angular 18**
+- **Angular Material** para componentes de UI
+- **RxJS** para programação reativa
+- **TypeScript** como linguagem principal
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades Principais
 
-## Code scaffolding
+### 1. Interface de Navegação Simples e Intuitiva
+- A aplicação conta com uma navegação fácil e organizada para acessar treinos, refeições e relatórios de progresso.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. Personalização de Planos
+- Os usuários podem visualizar e ajustar seus planos de treino e nutrição diretamente na interface.
 
-## Build
+### 3. Feedback Visuais e Notificações
+- Gráficos e relatórios semanais/mensais para acompanhar o progresso.
+- Notificações interativas e lembretes para exercícios, refeições e hidratação.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 4. Integração com Dispositivos Vestíveis
+- Interface visual que exibe dados em tempo real coletados de dispositivos como smartwatches.
 
-## Running unit tests
+## Pré-requisitos
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Node.js 18.x** ou superior
+- **Angular CLI 18** ou superior
+- **npm 9.x** ou superior
+- **Dispositivos vestíveis** para dados de desempenho
 
-## Running end-to-end tests
+## Como Executar o Projeto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 1. Clonar o Repositório
+```bash
+git clone https://github.com/francelinom/fitperformsync-frontend.git
+```
 
-## Further help
+### 2. Instalar Dependências
+Navegue até a pasta do projeto e instale as dependências necessárias:
+```bash
+cd fitperformsync-frontend
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 3. Rodar o Servidor de Desenvolvimento
+Para iniciar o servidor local, execute o seguinte comando:
+```bash
+ng serve
+```
