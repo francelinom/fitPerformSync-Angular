@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --background-color: #F4F4F6 ;
+  --primary-color: #FF6B6B;
+  --secondary-color: #4D73FE;
+  --tertiary-color: #FFD700;
+  --text-color: #2D3436;
+
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+}
+
+html, body { height: 100%;}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--background-color);
+}
+
