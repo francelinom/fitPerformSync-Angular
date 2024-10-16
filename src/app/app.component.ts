@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, computed, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -26,5 +26,6 @@ import {CustomSidenavComponent} from "./components/custom-sidenav/custom-sidenav
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'fitPerformSync-Angular';
+  collapsed = signal(false);
+  sidenavWidth = computed(() => this.collapsed() ? '65px' : '200px');
 }

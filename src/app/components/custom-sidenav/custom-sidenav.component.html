@@ -1,16 +1,32 @@
 <div class="sidenav-header">
-<!--  <img ngSrc="./assets/img/eu_fundo_branco.png" width="100" height="100" alt="Imagem">-->
-  <img ngSrc="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" width="100" height="100"  alt="Minha Imagem">
-  <div class="header-text">
+  @if(sideNavCollapsed()) {
+    <img ngSrc="https://cdn.shopify.com/s/files/1/0513/5692/6151/files/oculos-tony-stark-vingadores-edith-loja-da-ciencia-9_480x480.png?v=1616287934"
+         [width]="profilePicSize()"
+         [height]="profilePicSize()"
+         alt="Imagem">
+  } @else {
+    <img ngSrc="https://cdn.shopify.com/s/files/1/0513/5692/6151/files/oculos-tony-stark-vingadores-edith-loja-da-ciencia-9_480x480.png?v=1616287934"
+         [width]="profilePicSize()"
+         [height]="profilePicSize()"
+         alt="Imagem">
+  }
+  <div class="header-text" [class.hide-header-text]="sideNavCollapsed()">
     <h2>Homem de Ferro</h2>
     <p>Tony Stark</p>
   </div>
 </div>
 <mat-nav-list>
   @for (item of menuItems(); track item) {
-    <a mat-list-item>
+    <a mat-list-item
+       [routerLink]="item.route"
+       routerLinkActive
+       #rla="routerLinkActive"
+       [activated]="rla.isActive">
       <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-      <span matListItemTitle>{{item.label}}</span>
+      @if(!sideNavCollapsed()) {
+        <span matListItemTitle>{{item.label}}</span>
+
+      }
     </a>
   }
 </mat-nav-list>
