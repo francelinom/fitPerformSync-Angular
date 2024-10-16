@@ -1,0 +1,16 @@
+<div class="sidenav-header">
+<!--  <img ngSrc="./assets/img/eu_fundo_branco.png" width="100" height="100" alt="Imagem">-->
+  <img ngSrc="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" width="100" height="100"  alt="Minha Imagem">
+  <div class="header-text">
+    <h2>Homem de Ferro</h2>
+    <p>Tony Stark</p>
+  </div>
+</div>
+<mat-nav-list>
+  @for (item of menuItems(); track item) {
+    <a mat-list-item>
+      <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+      <span matListItemTitle>{{item.label}}</span>
+    </a>
+  }
+</mat-nav-list>
