@@ -1,1 +1,25 @@
-<p>dashboard works!</p>
+<div class="header">
+  <h3>Dashboard</h3>
+  <button mat-raised-button [mat-menu-trigger-for]="widgetMenu">
+    <mat-icon>add_circle</mat-icon>
+    Add Widget
+  </button>
+  <mat-menu #widgetMenu>
+    @for(widget of store.widgestToAdd(); track widget.id) {
+      <button mat-menu-item (click)="store.addWidget(widget)">
+        {{widget.label}}
+      </button>
+    } @empty {
+      <button mat-menu-item disabled>
+        No widgets available
+      </button>
+    }
+  </mat-menu>
+</div>
+
+<div class="dashboard-widgets">
+  @for(i of store.addedWidgets(); track i.id) {
+    <app-widget [data]="i"/>
+  }
+
+</div>
