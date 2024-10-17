@@ -10,3 +10,9 @@ mat-toolbar {
 mat-sidenav-container {
   height: calc(100vh - 64px);
 }
+
+mat-sidenav,
+mat-sidenav-content {
+  background: linear-gradient(90deg, #A8E6CF 0%, #56CCF2 100%);
+  transition: all 500ms ease-in-out;
+}

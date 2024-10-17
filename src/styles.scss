@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@include mat.core();
 
 :root {
   --background-color: #F4F4F6 ;
@@ -6,11 +8,6 @@
   --secondary-color: #4D73FE;
   --tertiary-color: #FFD700;
   --text-color: #2D3436;
-
-  //.mat-toolbar-row, .mat-toolbar-single-row {
-  //  background-color: var(--primary-color);
-  //  color: var(--text-color);
-  //}
 }
 
 html, body { height: 100%;}
@@ -18,5 +15,31 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: var(--background-color);
+  //--primary-color: #FF6B6B;
 }
 
+$mat-primary: (
+  main: #FF6B6B,
+  lighter: #f0b3b3,
+  darker: #c73939,
+  200: #FF6B6B,
+  contrast: (
+    main: #FFF,
+    lighter: #000,
+    darker: #FFF,
+  )
+);
+
+//$theme-primary: mat.m2-define-palette($mat-primary, main, lighter, darker);
+//$theme-accent: mat.m2-define-palette(mat.$blue-palette, 10, 100, neutral-variant);
+
+//#my-theme: mat.m2-define-light-theme(
+//  (
+//    color: (
+//      primary: $theme-primary,
+//      accent: $theme-accent,
+//    ),
+//    typography: mat.define-typography-config(),
+//    density: 0,
+//    )
+//);
