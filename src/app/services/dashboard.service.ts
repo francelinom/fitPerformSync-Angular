@@ -2,6 +2,8 @@ import {computed, Injectable, signal} from '@angular/core';
 import {SubscribersComponent} from "../pages/dashboard/widgets/subscribers/subscribers.component";
 import {Widget} from "../models/dashboard";
 import {ViewsComponent} from "../pages/dashboard/widgets/views/views.component";
+import {WatchTimeComponent} from "../pages/dashboard/widgets/watch-time/watch-time.component";
+import {RevenueComponent} from "../pages/dashboard/widgets/revenue/revenue.component";
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +12,76 @@ export class DashboardService {
   widgets = signal<Widget[]>([
     {
       id: 1,
-      label: 'Widget 1',
+      label: 'Subscribers',
       content: SubscribersComponent,
       rows: 2,
-      columns: 2
+      columns: 2,
+      backgroundColor: '#003f5c',
+      color: '#fff'
     },
     {
       id: 2,
-      label: 'View',
+      label: 'Views',
       content: ViewsComponent,
+      backgroundColor: '#47b1e3',
+      color: '#fff'
+    },
+    {
+      id: 3,
+      label: 'Watch Time',
+      content: WatchTimeComponent,
+      rows: 1,
+      columns: 1,
+      backgroundColor: '#003f5c',
+      color: '#fff'
+    },
+    {
+      id: 4,
+      label: 'Revenue',
+      content: RevenueComponent,
+      backgroundColor: '#47b1e3',
+      color: '#fff'
     }
   ])
 
-  addedWidgets = signal<Widget[]>([]);
+  addedWidgets = signal<Widget[]>([
+    {
+      id: 1,
+      label: 'Subscribers',
+      content: SubscribersComponent,
+      rows: 1,
+      columns: 1,
+      backgroundColor: '#003f5c',
+      color: '#fff'
+    },
+    {
+      id: 2,
+      label: 'Views',
+      content: ViewsComponent,
+      rows: 1,
+      columns: 1,
+      backgroundColor: '#47b1e3',
+      color: '#fff'
+    },
+    {
+      id: 3,
+      label: 'Watch Time',
+      content: WatchTimeComponent,
+      rows: 1,
+      columns: 1,
+      backgroundColor: '#003f5c',
+      color: '#fff'
+    },
+    {
+      id: 4,
+      label: 'Revenue',
+      content: RevenueComponent,
+      rows: 1,
+      columns: 1,
+      backgroundColor: '#47b1e3',
+      color: '#fff'
+    }
+  ]);
 
   widgestToAdd = computed(() => {
     const addedIds = this.addedWidgets().map((widget) => widget.id);
@@ -64,6 +123,10 @@ export class DashboardService {
     [newWidgets[index], newWidgets[index - 1]] = [{...newWidgets[index - 1]}, {...newWidgets[index]}];
 
     this.addedWidgets.set(newWidgets);
+  }
+
+  removeWidget(id: number) {
+    this.addedWidgets.set(this.addedWidgets().filter(w => w.id !== id));
   }
 
   constructor() {
